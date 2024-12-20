@@ -9,9 +9,10 @@
     <title>اهلا بكم في كأس العالم 2034</title>
     <style>
         :root {
-            --image-width: 23%; /* العرض الافتراضي للصورة */
-            --image-height: auto; /* الارتفاع الافتراضي للصورة */
+            --image-width: 100%;
+            --image-height: auto;
         }
+
         body {
             font-family: 'Almarai', sans-serif;
             background-image: url('images/STA-min.webp');
@@ -23,9 +24,11 @@
             min-height: 100vh;
             margin: 0;
         }
+
         header, main {
             flex: 0 0 auto;
         }
+
         .navbar {
             background-color: #1aa120e6;
             padding: 0.5rem;
@@ -33,35 +36,36 @@
             align-items: center;
             justify-content: space-between;
             color: white;
-            position: relative; /* إضافة position relative للهيدر */
         }
+
         .navbar img {
             height: 45px;
             margin-left: 15px;
             border-radius: 5px;
         }
+
         .navbar .navbar-brand {
-            margin-right: auto; /* نقل النص إلى أقصى اليسار */
-            color: #eeeeee; /* إضافة لون للنص */
+            margin-right: auto;
+            color: #eeeeee;
         }
+
         .social-icons {
             list-style: none;
             padding: 0;
             display: flex;
             gap: 15px;
-            position: absolute; /* استخدام position absolute لتحريك الأيقونات */
-            top: 10px; /* الإزاحة العمودية */
-            left: 8%; /* الإزاحة الأفقية لتوسيط الأيقونات */
-            transform: translateX(-50%); /* لجعل الأيقونات في المنتصف */
         }
+
         .social-icons li a {
             color: white;
             font-size: 1.5rem;
             transition: color 0.3s;
         }
+
         .social-icons li a:hover {
             color: #004a6f;
         }
+
         .buy-ticket {
             background-color: #0586ff;
             color: white;
@@ -70,11 +74,12 @@
             text-decoration: none;
             font-size: 1rem;
             transition: background-color 0.3s;
-            margin-right: 20px; /* إضافة مسافة بين زر شراء التذكرة وأيقونات السوشيال ميديا */
         }
+
         .buy-ticket:hover {
             background-color: #11045f;
         }
+
         .main-section {
             flex: 1;
             padding: 2rem;
@@ -83,16 +88,13 @@
             justify-content: center;
             gap: 20px;
         }
-        /* إضافة حواف ناعمة للكروت */
+
         .main-section .card {
-            position: absolute;
-            top: 430px;
-            left: 490px;
             width: 250px;
-            height: 400px;
+            height: auto;
             background-color: rgb(88, 228, 84);
             border: none;
-            border-radius: 15px; /* حواف ناعمة */
+            border-radius: 15px;
             overflow: hidden;
             text-align: center;
             position: relative;
@@ -103,36 +105,43 @@
             align-items: center;
             justify-content: center;
         }
-        /* إضافة حواف ناعمة للصور داخل الكروت */
+
         .main-section .card img {
-            width: 230px;
-            height: 230px;
+            width: 100%;
+            max-width: 230px;
+            height: auto;
             margin-bottom: 10px;
-            border-radius: 15px; /* حواف ناعمة للصورة */
+            border-radius: 15px;
         }
+
         .main-section .card:hover {
             transform: scale(1.05);
         }
+
         .main-section .card h2 {
             margin-top: 10px;
             background: rgba(0, 0, 0, 0.5);
             padding: 10px 20px;
             border-radius: 10px;
         }
+
         #image-container {
             text-align: center;
             margin: 2rem 0;
         }
+
         #image-container img {
-            width: var(--image-width);
-            height: var(--image-height);
-            border-radius: 15px; /* حواف ناعمة للصورة */
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
         }
+
         #image-container img:hover {
             transform: scale(1.05);
         }
+
         footer {
             background-color: #1aa120e6;
             color: white;
@@ -142,56 +151,22 @@
             margin-top: auto;
         }
 
-        /* Media Queries for Responsive Design */
-        @media (max-width: 1200px) {
-            .main-section .card {
-                width: 220px;
-                height: 350px;
-                top: 400px;
-                left: 450px;
-            }
-
-            .social-icons {
-                top: 8px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-
-        @media (max-width: 992px) {
-            .navbar img {
-                height: 35px;
-            }
-
-            .social-icons {
-                top: 5px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .main-section .card {
-                width: 200px;
-                height: 330px;
-                top: 380px;
-                left: 420px;
-            }
-        }
-
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 align-items: center;
             }
 
+            .navbar img {
+                height: 35px;
+            }
+
             .navbar .navbar-brand {
-                margin-right: 0;
                 margin-bottom: 10px;
             }
 
             .social-icons {
-                top: 5px;
-                left: 50%;
-                transform: translateX(-50%);
+                justify-content: center;
             }
 
             .buy-ticket {
@@ -199,15 +174,11 @@
             }
 
             .main-section .card {
-                width: 180px;
-                height: 300px;
-                top: 370px;
-                left: 400px;
+                width: 200px;
             }
 
             #image-container img {
-                width: 60%; /* ضبط حجم الصورة على الجوال */
-                height: auto;
+                width: 200px;
             }
         }
 
@@ -217,19 +188,14 @@
             }
 
             .main-section .card {
-                width: 160px;
-                height: 270px;
-                top: 350px;
-                left: 380px;
+                width: 150px;
             }
 
             #image-container img {
-                width: 80%; /* زيادة حجم الصورة لتناسب شاشات الجوال الصغيرة */
-                height: auto;
+                width: 150px;
             }
         }
 
-        /* إزالة الخط تحت النصوص في الروابط */
         a {
             text-decoration: none;
         }
@@ -247,13 +213,12 @@
                 <li><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="https://snapchat.com" target="_blank"><i class="fa fa-snapchat"></i></a></li>
             </ul>
-            <a href="Index6.html" class="buy-ticket">شراء تذكرة</a> <!-- رابط صفحة شراء التذكرة -->
+            <a href="Index6.html" class="buy-ticket">شراء تذكرة</a>
         </nav>
     </header>
 
     <main>
         <section class="main-section">
-            <!-- روابط تم إضافتها حول كل كارد -->
             <a href="index10.html" class="card">
                 <img src="images/transportation.png" alt="النقل">
                 <h2>النقل</h2>
@@ -270,23 +235,13 @@
                 <img src="images/football-field (1).png" alt="الملاعب">
                 <h2>الملاعب</h2>
             </a>
+            <a href="index4.html" class="card">
+                <img src="https://ummid.com/news/2024/december/11-12-2024/fifa-2034-world-cup-host.webp" alt="كأس العالم">
+                <h2>كأس العالم</h2>
+            </a>
         </section>
     </main>
 
-    <div id="image-container">
-        <img src="https://ummid.com/news/2024/december/11-12-2024/fifa-2034-world-cup-host.webp" 
-             alt="كأس العالم" 
-             style="width: 450px; height: 450px; margin-top: -40px; margin-left: -780px;"
-             onclick="openNewPage()">
-    </div>
-    
-    <script>
-        function openNewPage() {
-            // فتح صفحة جديدة في نفس النافذة
-            window.location.href = 'index4.html';  // استبدل 'index4.html' بالصفحة التي تريد فتحها
-        }
-    </script>
-    
     <footer>
         جميع الحقوق محفوظه لدى اكادمية طويق
     </footer>
