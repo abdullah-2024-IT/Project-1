@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>شراء التذاكر - كأس العالم 2034</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1aa120;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .ticket-card {
+            width: 250px;
+            height: 350px;
+            perspective: 1000px;
+            margin: 20px;
+            cursor: pointer; /* تغيير المؤشر ليظهر كزر عند التمرير */
+        }
+        .ticket-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .ticket-card:hover .ticket-inner {
+            transform: rotateY(180deg);
+        }
+        .ticket-front, .ticket-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .ticket-front {
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .ticket-back {
+            background-color: #1aa120;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .ticket-front img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .ticket-title {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .ticket-price {
+            font-size: 1.2rem;
+            margin: 5px 0;
+            text-align: center;
+        }
+        .ticket-description {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #1aa120;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* زر الصفحة الرئيسية */
+        .home-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .home-btn {
+            background-color: #0586ff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;  /* إزالة الخط تحت النص */
+        }
+        .home-btn:hover {
+            background-color: #11045f;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>شراء التذاكر - كأس العالم 2034</h1>
+</header>
+
+<div class="container">
+    <!-- بطاقة التذكرة العادية -->
+    <a href="index8.html" class="ticket-card">
+        <div class="ticket-inner">
+            <div class="ticket-front">
+                <img src="images/ticket (1).png" alt="تذكرة عادية">
+                <div class="ticket-title">التذكرة العادية</div>
+                <div class="ticket-price">100 ريال</div>
+            </div>
+            <div class="ticket-back">
+                <div class="ticket-description">تذكرة دخول عامة للمباراة. تتضمن مكانًا في المدرجات العادية.</div>
+            </div>
+        </div>
+    </a>
+
+    <!-- بطاقة التذكرة الفضية -->
+    <a href="index8.html" class="ticket-card">
+        <div class="ticket-inner">
+            <div class="ticket-front">
+                <img src="https://t4.ftcdn.net/jpg/08/73/79/09/360_F_873790966_mTQbgIZj0Rk6qTBr1l41zTaayDxAARn2.jpg" alt="تذكرة فضية">
+                <div class="ticket-title">التذكرة الفضية</div>
+                <div class="ticket-price">200 ريال</div>
+            </div>
+            <div class="ticket-back">
+                <div class="ticket-description">تذكرة دخول في منطقة فضية مع أفضل رؤية للملعب.</div>
+            </div>
+        </div>
+    </a>
+
+    <!-- بطاقة التذكرة الذهبية -->
+    <a href="index8.html" class="ticket-card">
+        <div class="ticket-inner">
+            <div class="ticket-front">
+                <img src="https://media.istockphoto.com/id/886545368/vector/gold-ticket-golden-token-with-star-magical-background.jpg?s=612x612&w=0&k=20&c=CqTeAW6HP-w29N7MSFjXbMW8EWZSt-sM8BbDNbdL49g=" alt="تذكرة ذهبية">
+                <div class="ticket-title">التذكرة الذهبية</div>
+                <div class="ticket-price">500 ريال</div>
+            </div>
+            <div class="ticket-back">
+                <div class="ticket-description">تذكرة VIP مع الوصول إلى غرفة كبار الشخصيات والمزايا الحصرية.</div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<!-- زر الصفحة الرئيسية -->
+<div class="home-btn-container">
+    <a href="index1.html" class="home-btn">الذهاب إلى الصفحة الرئيسية</a>
+</div>
+
+<div class="footer">
+    <p>جميع الحقوق محفوظة © 2034 - اكاديمية طويق</p>
+</div>
+
+</body>
+</html>
